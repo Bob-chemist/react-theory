@@ -3,11 +3,27 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const divStyle = {
+      textAlign : 'center',
+      bgc
+    }
     return (
-      <div className="App">
-        <h1>hello world!</h1>
+      <div className="App" style={ divStyle }>
+        <h1 style= {{color: 'blue', fontSize: '50px'}}>hello world!</h1>
       </div>
+      
     );
+    // return React.createElement(
+    //   'div',
+    //   {
+    //     className: 'App',
+    //   },
+    //   React.createElement(
+    //     'h1',
+    //     null,
+    //     'hello world'
+    //   )
+    // )
   }
 }
 
