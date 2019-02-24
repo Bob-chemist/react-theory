@@ -405,6 +405,12 @@ module.exports = function(webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
+            // {
+            //   test: /\.sass$/,
+            //   use: [
+            //     require.resolve
+            //   ],
+            // },
             // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
             // using the extension .module.css
             {
