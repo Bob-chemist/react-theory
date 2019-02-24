@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import Car from './Car/Car'
 
 class App extends Component {
   render() {
     const divStyle = {
-      textAlign : 'center',
-      bgc
+      textAlign : 'center',      
     }
     return (
       <div className="App" style={ divStyle }>
-        <h1 style= {{color: 'blue', fontSize: '50px'}}>hello world!</h1>
+        <h1>hello world!</h1>
+        <Car />
       </div>
       
     );
