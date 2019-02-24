@@ -11,6 +11,8 @@ class App extends Component {
       <div className="App" style={ divStyle }>
         <h1>hello world!</h1>
         <Car />
+        <Car />
+        <Car />
       </div>
       
     );
