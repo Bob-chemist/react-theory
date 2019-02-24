@@ -10,24 +10,17 @@ class App extends Component {
     return (
       <div className="App" style={ divStyle }>
         <h1>hello world!</h1>
-        <Car name={'Ford'} year={2018}/>
-        <Car name={'Audi'} year={2015}/>
+        <Car name={'Ford'} year={2018}>
+          <p style={{color: 'red'}}>BAD CAR</p>
+        </Car>
+        <Car name={'Audi'} year={2015}>
+          <p style={{color: 'green'}}>GOOD CAR</p>
+        </Car>
         <Car name='Mazda' year={2005}/>
         
       </div>
       
     );
-    // return React.createElement(
-    //   'div',
-    //   {
-    //     className: 'App',
-    //   },
-    //   React.createElement(
-    //     'h1',
-    //     null,
-    //     'hello world'
-    //   )
-    // )
   }
 }
 
