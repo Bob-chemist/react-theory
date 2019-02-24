@@ -10,9 +10,10 @@ class App extends Component {
     return (
       <div className="App" style={ divStyle }>
         <h1>hello world!</h1>
-        <Car />
-        <Car />
-        <Car />
+        <Car name={'Ford'} year={2018}/>
+        <Car name={'Audi'} year={2015}/>
+        <Car name='Mazda' year={2005}/>
+        
       </div>
       
     );
