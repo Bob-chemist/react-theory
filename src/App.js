@@ -13,8 +13,8 @@ class App extends Component {
     this.state = {
       cars: [
         {name: 'Ford', year: 2018},
-        // {name: 'Audi', year: 2015},
-        // {name: 'Mazda', year: 2005},
+        {name: 'Audi', year: 2015},
+        {name: 'Mazda', year: 2005},
       ],
       pageTitle: 'React Components',
       showCars: false,
@@ -61,8 +61,7 @@ class App extends Component {
       cars = this.state.cars.map((car, index) => {
         return (
           <ErrorBoundary key={index}>
-            <Car 
-              key={index}
+            <Car               
               name={car.name}
               year={car.year}
               onDelete={this.deleteHandler.bind(this, index)}
