@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Counter2 from '../Counter2/Counter2'
 // import Auxiliary from './../hoc/Auxiliary'
 
 export default class Counter extends Component {
@@ -47,6 +48,7 @@ export default class Counter extends Component {
       return (
         <>
           <h2>Counter {this.state.counter}</h2>
+          <Counter2 />
           <button onClick={this.addCounter}>+</button>
           <button onClick={() => this.setState({counter: this.state.counter - 1})}>-</button>
         </>
