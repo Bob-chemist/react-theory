@@ -1,112 +1,31 @@
-import React, { Component } from 'react';
-import './App.sass';
-import Car from './Car/Car'
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
-import Counter from './Counter/Counter'
-
-export const ClickedContext = React.createContext(false);
+import React, {Component} from 'react'
+import './App.sass'
+import About from './About/About'
+import Cars from './Cars/Cars'
 
 class App extends Component {
-  
-  constructor(props) {
-    console.log('App constructor');
-    
-    super(props);
-    this.state = {
-      clicked: false,
-      cars: [
-        {name: 'Ford', year: 2018},
-        {name: 'Audi', year: 2015},
-        {name: 'Mazda', year: 2005},
-      ],
-      pageTitle: 'React Components',
-      showCars: false,
-    }
-  }
-
-  toggleCarsHandler = () => {    
-      this.setState({
-      showCars: !this.state.showCars,
-    })
-  }
-
-  onChangeName = (name, index) => {
-    const car = this.state.cars[index];
-    car.name = name;
-    const cars = [...this.state.cars];
-    cars[index] = car;
-    this.setState({cars}); 
-  }
-
-  deleteHandler(index) {
-    const cars = [...this.state.cars];
-    cars.splice(index, 1);
-    this.setState({cars});
-  }
-
-  componentWillMount() {
-    console.log('App componentWillMount');
-    
-  }
-  componentDidMount() {
-    console.log('App componentDidMount');
-    
-  }
-
   render() {
-    console.log('App render');
-    
-    const divStyle = {
-      textAlign : 'center',      
-    }
-    let cars = null;
-    if (this.state.showCars) {
-      cars = this.state.cars.map((car, index) => {
-        return (
-          <ErrorBoundary key={index}>
-            <Car               
-              name={car.name}
-              year={car.year}
-              index={index}
-              onDelete={this.deleteHandler.bind(this, index)}
-              onChangeName={event => this.onChangeName(event.target.value, index) }
-            />
-          </ErrorBoundary>
-        )
-      }) 
-    }
 
     return (
-      <div className="App" style={ divStyle }>
-        {/* <h1>{this.state.pageTitle}</h1> */}
-        <h1>{this.props.title}</h1>
+      <div>
+        <nav className="nav">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
 
-        <ClickedContext.Provider value={this.state.clicked}>
-         <Counter />
-        </ClickedContext.Provider>
-        
+        <hr/>
+        <About />
 
-        <hr />
-        <button 
-          style={{marginTop: 20}}
-					className='but'
-          onClick={ this.toggleCarsHandler }
-        >Toggle cars</button>
-        <hr />
-        <button onClick={() => this.setState({clicked: true})}>Click me!</button> 
-
-        <div style={{
-          width: 400,
-          margin: 'auto',
-          paddingTop: '20px',
-        }}>
-          {cars}
-        </div>
-        
+        <Cars />
       </div>
-      
     );
   }
 }
 
-export default App;
+export default App
