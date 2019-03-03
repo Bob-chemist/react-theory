@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.sass'
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 import About from './About/About'
 import Cars from './Cars/Cars'
 import CarDetail from './CarDetail/CarDetail';
@@ -45,9 +45,13 @@ class App extends Component {
             component={Cars}
           />      
            <Route 
-            path={ '/' }
+            path={ '/' } exact
             render={() => <h1>Home page</h1> }
-          />    
+          />
+          <Redirect to={'/cars'} />
+          {/* <Route
+            render={() => <h1 style={{textAlign: "center", color: 'red'}}>Wrong Page</h1>}
+          /> */}
         </Switch>
         
       </div>
